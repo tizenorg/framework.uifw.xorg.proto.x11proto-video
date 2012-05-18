@@ -19,7 +19,7 @@ mainly to rescale video playback in the video controller hardware.
 
 
 %prep
-%setup -q -n videoproto-%{version}
+%setup -q -n %{name}-%{version}
 
 
 %build
