@@ -7,6 +7,7 @@ Group:      Development/System
 License:    MIT
 URL:        http://www.x.org
 Source0:    http://xorg.freedesktop.org/releases/individual/proto/videoproto-%{version}.tar.gz
+Source1001: packaging/xorg-x11-proto-videoproto.manifest 
 Provides:   videoproto
 BuildRequires: pkgconfig(xorg-macros)
 
@@ -23,6 +24,7 @@ mainly to rescale video playback in the video controller hardware.
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure --disable-static \
     --libdir=%{_datadir}
@@ -40,6 +42,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest xorg-x11-proto-videoproto.manifest
 %defattr(-,root,root,-)
 %{_datadir}/pkgconfig/videoproto.pc
 %{_includedir}/X11/extensions/vldXvMC.h
